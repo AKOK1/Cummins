@@ -1,0 +1,12 @@
+ALTER TABLE `tblquestionmaster` ADD `mapco` VARCHAR(200) DEFAULT NULL;
+ALTER TABLE `tblquestionmaster` ADD   `mappo` VARCHAR(200) DEFAULT NULL;
+ALTER TABLE `tblquestionmaster` ADD   `keyword` VARCHAR(400) DEFAULT NULL;
+ALTER TABLE `tblquestionmaster` ADD   `unit` VARCHAR(100) DEFAULT NULL;
+
+CREATE TABLE `tblpaperexpts` (
+  `expid` INT(11) NOT NULL AUTO_INCREMENT,
+  `paperid` INT(11) DEFAULT NULL,
+  `complexp` VARCHAR(1000) DEFAULT NULL,
+  `Iscomp` SMALLINT(6) DEFAULT '0',
+  PRIMARY KEY (`expid`)
+) ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;

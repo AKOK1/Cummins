@@ -1,0 +1,32 @@
+<select name="ddlDept" style="width:90%;margin-top:10px">
+					  <?php
+					  include 'db/db_connect.php';
+						$sql = "SELECT 0 AS DeptId, ' Select Department'  AS DeptName UNION SELECT DISTINCT DM.DeptId, DM.DeptName FROM tblPaperMaster PM, tbldepartmentmaster DM, tblExamSchedule ES WHERE PM.DeptID = DM.DeptID AND PM.paperID = ES.PaperID AND ES.ExamID = " . $_SESSION["SESSExamID"] . " ORDER BY DeptId;";
+					  $result1 = $mysqli->query( $sql );
+					  while( $row = $result1->fetch_assoc() ) {
+					  extract($row);
+					  echo "<option value={$DeptId} ";  
+						If ((isset($_POST['ddlDept']) && $_POST['ddlDept'] == $DeptId) || (isset($_SESSION["SESSDeptId"]) && $_SESSION["SESSDeptId"] == $DeptId)) 
+						{ echo 'selected';}
+					  echo ">{$DeptName}</option>"; 
+					  }
+					  ?>
+					 </select>
+					 
+					 
+					 		echo "<ddlDept>\n\t<id>".$row['DeptId'].
+		If ((isset($_SESSION["SESSDeptId"]) && ($_SESSION["SESSDeptId"] == $row['DeptId'])) 
+		{ echo 'selected';}.
+		"</id>\n\t<name>".$row['DeptName']."</name>\n</ddlDept>\n";
+
+
+
+
+
+								echo "<td class='span2'><a class='btn btn-mini btn-danger' href='PaperBlockUpdPartial.php?IUD=P&PaperID={$_POST['ddlPaper']}&ExamBlockID={$ExamBlockID}&partialloc={$_POST['txtPA']}'>
+													<i class='icon-remove icon-white'></i>Mark Partial</a></td>";
+
+
+
+								echo "<td class='span2'><a class='btn btn-mini btn-danger' href='PaperBlockUpdPartial.php?IUD=P&PaperID={$_POST['ddlPaper']}&ExamBlockID={$ExamBlockID}'>
+													<i class='icon-remove icon-white'></i>Mark Partial</a></td>";	
