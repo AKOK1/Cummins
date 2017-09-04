@@ -65,15 +65,27 @@ include 'db/db_connect.php';
 						}
 						?>
 					</select>
-					<input type="hidden" name="hdnexamname" id="examname_hidden">
-				</td>
+					
+				<td class="form_sec span1" style="width:10%"><b>Select Year</b></td>
+				<td class="form_sec span2" style="width:25%">
+				<select id="ddlExamID" name="ddlExam" style="width:100%;margin-top:10px">
+				<option value="">Select </option>
+					<option value="2017-16">2017-16</option>
+					<option value="2016-15" >2016-15</option>
+					<option value="2015-14">2015-14</option>
+				</select>
+				
+			</div>
+				
+					
 				<td class="form_sec span2" style="width:20%">
 					<input type="submit" name="btnSelect" value="Go To Exam Menu" title="Go To Exam Main" class="btn btn btn-success" />
 				</td>						
-				<td class="form_sec span2" style="width:15%">
-					<h4><a href="MainMenuMain.php">Back to Main Menu</a></h4>
-				</td>				
+				
+                <div style="float:right;margin-right:50px">
+					<h3 class="page-title"><a href="MainMenuMain.php">Back</a></h3>
+				</div>			
 			</tr>						
 		</table>
-
-</form>
+</form>	
+			
